@@ -33,9 +33,11 @@ gem "slim"
 
 # all other gems
 gem 'actioncable'
+gem 'bcrypt'
 gem "decent_decoration"
 gem "decent_exposure"
 gem "devise"
+gem 'doorkeeper'
 gem "draper"
 gem "flamegraph"
 gem "google-analytics-rails"
