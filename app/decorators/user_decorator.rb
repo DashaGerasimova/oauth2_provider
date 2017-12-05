@@ -1,4 +1,4 @@
-class AuthorisationDecorator < Draper::Decorator
+class UserDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -9,5 +9,4 @@ class AuthorisationDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
 end
