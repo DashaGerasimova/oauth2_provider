@@ -77,7 +77,7 @@ Doorkeeper::JWT.configure do
   # Set the encryption secret. This would be shared with any other applications
   # that should be able to read the payload of the token.
   # Defaults to "secret"
-  secret_key "kittens"
+  secret_key ENV["SECRET_OAUTH_KEY"]
 
   # If you want to use RS* encoding specify the path to the RSA key
   # to use for signing.
