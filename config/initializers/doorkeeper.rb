@@ -3,14 +3,13 @@ Doorkeeper.configure do
   orm :active_record
 
   # This block will be called to check whether the resource owner is authenticated or not.
-  resource_owner_authenticator do
-    current_user || redirect_to(new_user_session_url)
-  end
-
-  # resource_owner_from_credentials do |_routes|
-  #   user = User.find_for_database_authentication(email: params[:username])
-  #   user if user && user.valid_password?(params[:password])
+  # resource_owner_authenticator do
+  #   current_user || redirect_to(new_user_session_url)
   # end
+
+  resource_owner_from_credentials do |_routes|
+    User.authenticate(params[:email], params[:password])
+  end
 
   # admin_authenticator do
   #   current_user || redirect_to(new_user_session_url)
@@ -27,7 +26,7 @@ Doorkeeper.configure do
   # Access token expiration time (default 2 hours).
   # If you want to disable expiration, set this to nil.
   # access_token_expires_in 2.hours
-  reuse_access_token
+  # reuse_access_token
 
   # Issue access tokens with refresh token (disabled by default)
   use_refresh_token
@@ -40,8 +39,11 @@ Doorkeeper.configure do
 
   # native_redirect_uri 'urn:ietf:wg:oauth:2.0:oob'
 
-  # grant_flows %w(authorization_code client_credentials)
+  grant_flows %w(password)
 
+  skip_authorization do
+    true
+  end
 end
 
 Doorkeeper::JWT.configure do
@@ -58,7 +60,7 @@ Doorkeeper::JWT.configure do
         id: user.id,
         email: user.email
       },
-      expires_at: exp.to_s   
+      expires_at: exp.to_s
     }
   end
 
