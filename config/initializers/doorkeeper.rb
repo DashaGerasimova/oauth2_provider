@@ -31,7 +31,7 @@ Doorkeeper.configure do
   # Issue access tokens with refresh token (disabled by default)
   use_refresh_token
 
-  default_scopes  :public
+  default_scopes :public
   # optional_scopes :write, :update
 
   # client_credentials :from_basic, :from_params
@@ -39,7 +39,7 @@ Doorkeeper.configure do
 
   # native_redirect_uri 'urn:ietf:wg:oauth:2.0:oob'
 
-  grant_flows %w(password)
+  grant_flows %w[password]
 
   skip_authorization do
     true
