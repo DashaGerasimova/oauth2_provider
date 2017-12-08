@@ -1,110 +1,111 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'pg'
-gem 'rails', '5.1.2'
+gem "pg"
+gem "rails", "5.1.2"
 
 # assets
-gem 'autoprefixer-rails'
-gem 'coffee-rails'
-gem 'foundation-icons-sass-rails'
-gem 'foundation-rails'
-gem 'mini_racer'
-gem 'premailer-rails'
-gem 'sass-rails', '~> 5.0.0', '>= 5.0.6'
-gem 'uglifier', '>= 2.7.2'
+gem "autoprefixer-rails"
+gem "coffee-rails"
+gem "foundation-icons-sass-rails"
+gem "foundation-rails"
+gem "mini_racer"
+gem "premailer-rails"
+gem "sass-rails", "~> 5.0.0", ">= 5.0.6"
+gem "uglifier", ">= 2.7.2"
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery-ujs'
-  gem 'rails-assets-jquery2'
+source "https://rails-assets.org" do
+  gem "rails-assets-jquery-ujs"
+  gem "rails-assets-jquery2"
 end
 
 # views
-gem 'active_link_to'
-gem 'inky-rb', require: 'inky'
-gem 'meta-tags'
-gem 'simple_form'
-gem 'slim'
+gem "active_link_to"
+gem "inky-rb", require: "inky"
+gem "meta-tags"
+gem "simple_form"
+gem "slim"
 
 # all other gems
-gem 'actioncable'
-gem 'bcrypt'
-gem 'decent_decoration'
-gem 'decent_exposure'
-gem 'devise'
-gem 'doorkeeper'
-gem 'draper'
-gem 'flamegraph'
-gem 'google-analytics-rails'
-gem 'graphql-streaming'
-gem 'health_check'
-gem 'interactor'
-gem 'kaminari'
-gem 'memory_profiler'
-gem 'puma'
-gem 'pundit'
-gem 'rack-canonical-host'
-gem 'rack-cors', require: 'rack/cors'
-gem 'rack-mini-profiler', require: false, git: 'https://github.com/MiniProfiler/rack-mini-profiler.git'
-gem 'rack-oauth2'
-gem 'redis', '~> 3.0'
-gem 'responders'
-gem 'rollbar'
-gem 'seedbank'
-gem 'stackprof'
-gem 'turbolinks'
-gem 'validates_email_format_of'
+gem "actioncable"
+gem "bcrypt"
+gem "decent_decoration"
+gem "decent_exposure"
+gem "devise"
+gem "doorkeeper"
+gem "doorkeeper-jwt"
+gem "draper"
+gem "flamegraph"
+gem "google-analytics-rails"
+gem "graphql-streaming"
+gem "health_check"
+gem "interactor"
+gem "kaminari"
+gem "memory_profiler"
+gem "puma"
+gem "pundit"
+gem "rack-canonical-host"
+gem "rack-cors", require: "rack/cors"
+gem "rack-mini-profiler", require: false, git: "https://github.com/MiniProfiler/rack-mini-profiler.git"
+gem "rack-oauth2"
+gem "redis", "~> 3.0"
+gem "responders"
+gem "rollbar"
+gem "seedbank"
+gem "stackprof"
+gem "turbolinks"
+gem "validates_email_format_of"
 
 group :staging, :production do
-  gem 'newrelic_rpm'
+  gem "newrelic_rpm"
 end
 
 group :test do
-  gem 'capybara'
-  gem 'codeclimate-test-reporter', require: false
-  gem 'database_cleaner'
-  gem 'email_spec'
-  gem 'formulaic'
-  gem 'guard-rspec'
-  gem 'launchy'
-  gem 'poltergeist'
-  gem 'rspec-its'
-  gem 'shoulda-matchers'
-  gem 'terminal-notifier-guard'
-  gem 'webmock', require: false
+  gem "capybara"
+  gem "codeclimate-test-reporter", require: false
+  gem "database_cleaner"
+  gem "email_spec"
+  gem "formulaic"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "poltergeist"
+  gem "rspec-its"
+  gem "shoulda-matchers"
+  gem "terminal-notifier-guard"
+  gem "webmock", require: false
 end
 
 group :development, :test do
-  gem 'awesome_print'
-  gem 'brakeman', require: false
-  gem 'bullet'
-  gem 'bundler-audit', require: false
-  gem 'byebug'
-  gem 'coffeelint'
-  gem 'dotenv-rails'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'graphiql-rails', '1.4.4'
-  gem 'jasmine', '> 2.0'
-  gem 'jasmine-jquery-rails'
-  gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
-  gem 'rubocop', require: false
-  gem 'rubocop-rspec', require: false
-  gem 'scss_lint', require: false
-  gem 'slim_lint', require: false
+  gem "awesome_print"
+  gem "brakeman", require: false
+  gem "bullet"
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "coffeelint"
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "graphiql-rails", "1.4.4"
+  gem "jasmine", "> 2.0"
+  gem "jasmine-jquery-rails"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.5"
+  gem "rubocop", require: false
+  gem "rubocop-rspec", require: false
+  gem "scss_lint", require: false
+  gem "slim_lint", require: false
 end
 
 group :development do
-  gem 'letter_opener'
-  gem 'rails-erd'
-  gem 'slim-rails'
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen'
-  gem 'web-console'
+  gem "letter_opener"
+  gem "rails-erd"
+  gem "slim-rails"
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "spring-watcher-listen"
+  gem "web-console"
 end
