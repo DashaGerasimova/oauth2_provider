@@ -51,14 +51,14 @@ Doorkeeper::JWT.configure do
   # { token: "RANDOM-TOKEN" }
   token_payload do |opts|
     user = User.find(opts[:resource_owner_id])
+    exp = opts[:created_at] + opts[:expires_in].seconds
 
     {
       user: {
         id: user.id,
         email: user.email
       },
-      expires_at: opts[:expires_in],
-      created_at: opts[:created_at]   
+      expires_at: exp.to_s   
     }
   end
 
