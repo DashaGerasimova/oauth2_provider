@@ -1,5 +1,6 @@
 # OAuth2 provider
-App that generates access token for existing user
+App that generates access token for existing user.
+
 Used gems: [doorkeeper gem](https://github.com/applicake/doorkeeper), [devise](https://github.com/plataformatec/devise), [doorkeeper-jwt](https://github.com/chriswarren/doorkeeper-jwt)
 ## Setup 
 ```
