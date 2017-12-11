@@ -73,6 +73,7 @@ group :test do
   gem "formulaic"
   gem "guard-rspec"
   gem "launchy"
+  gem "oauth2"
   gem "poltergeist"
   gem "rspec-its"
   gem "shoulda-matchers"

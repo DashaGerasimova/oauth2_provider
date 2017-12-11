@@ -1,21 +1,3 @@
-# RSpec.describe User, :type => :model do
-#   subject { User.new }
-
-#   it "is valid with valid attributes" do
-#     subject.email = "myemail@gmail.com"
-#     subject.password = "some_passw"
-#     expect(subject).to be_valid
-#   end
-
-#   it "is not valid with invalid email" do
-#     expect(subject).to_not be_valid
-#   end
-
-#   it "is not valid without a description"
-#   it "is not valid without a start_date"
-#   it "is not valid without a end_date"
-# end
-
 require 'rails_helper'
 
 describe User, 'is valid?' do
