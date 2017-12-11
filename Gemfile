@@ -69,9 +69,11 @@ group :test do
   gem "codeclimate-test-reporter", require: false
   gem "database_cleaner"
   gem "email_spec"
+  gem "faker"
   gem "formulaic"
   gem "guard-rspec"
   gem "launchy"
+  gem "oauth2"
   gem "poltergeist"
   gem "rspec-its"
   gem "shoulda-matchers"
